@@ -57,3 +57,7 @@ resource "aws_iam_policy" "policy" {
 EOT
 }
 
+resource "aws_iam_user_policy_attachment" "attachment" {
+  user       = aws_iam_user.new_user.name
+  policy_arn = aws_iam_policy.policy.arn
+}
